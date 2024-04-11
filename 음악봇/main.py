@@ -6,10 +6,12 @@ import asyncio
 import yt_dlp as youtube_dl
 import random
 from datetime import datetime
+from distoken import TOKEN
+
 
 now = datetime.now()
 
-TOKEN = "OTUyOTI5MzI3MDA2MjIwMjk5.G4zyQj.zSZMU_F4g--m7E1Lt39027WpwNU_nsxxwHtBqk"
+
 bot = commands.Bot(command_prefix=commands.when_mentioned_or(",") and "," , intents=nextcord.Intents.all())
                 #  command_prefix 란 시작할 명령어             ⬆이것과  ⬆이것은 같게 해야함
 
@@ -24,7 +26,7 @@ async def on_ready():
 async def main():
     async with bot:
         await bot.add_cog(Music(bot))
-        await bot.start("OTUyOTI5MzI3MDA2MjIwMjk5.G4zyQj.zSZMU_F4g--m7E1Lt39027WpwNU_nsxxwHtBqk")
+        await bot.start(TOKEN)
 
 
 
